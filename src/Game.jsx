@@ -145,15 +145,16 @@ const Game = () => {
       {/* Buttons for controlling the game */}
       <div className="button-container">
         {!isGameRunning ? (
-          <button onClick={handleStart}>Start</button>
+          <button onClick={handleStart} className="start-btn">Start</button>
         ) : (
-          <button onClick={handlePause}>Pause</button>
+          <button onClick={handlePause} className="pause-btn">Pause</button>
         )}
         {!isGameRunning && score > 0 && (
-          <button onClick={handleResume}>Resume</button>
+          <button onClick={handleResume} className="resume-btn">Resume</button>
         )}
-        <button onClick={handleRestart}>Restart</button>
+        <button onClick={handleRestart} className="restart-btn">Restart</button>
       </div>
+
 
       <Stage width={window.innerWidth} height={window.innerHeight}>
         <Layer>
