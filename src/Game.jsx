@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Stage, Layer, Rect, Circle, Line, Text } from 'react-konva';
+import React, { useState, useEffect } from "react";
+import { Stage, Layer, Rect, Circle, Line, Text } from "react-konva";
 
 const Game = () => {
   const [mouseX, setMouseX] = useState(window.innerWidth / 2);
@@ -30,7 +30,8 @@ const Game = () => {
   // Spawning enemies (birds or insects)
   const spawnEnemies = () => {
     const newEnemies = [];
-    for (let i = 0; i < 2; i++) {  // Spawn 2 enemies per cycle
+    for (let i = 0; i < 2; i++) {
+      // Spawn 2 enemies per cycle
       const newEnemy = {
         id: Date.now() + i,
         x: Math.random() * window.innerWidth,
@@ -45,10 +46,14 @@ const Game = () => {
   // Move arrows and enemies
   const gameLoop = () => {
     // Move arrows upwards
-    setArrows((prevArrows) => prevArrows.map((arrow) => ({ ...arrow, y: arrow.y - 5 })));
+    setArrows((prevArrows) =>
+      prevArrows.map((arrow) => ({ ...arrow, y: arrow.y - 5 }))
+    );
 
     // Move enemies downwards
-    setEnemies((prevEnemies) => prevEnemies.map((enemy) => ({ ...enemy, y: enemy.y + enemy.speed })));
+    setEnemies((prevEnemies) =>
+      prevEnemies.map((enemy) => ({ ...enemy, y: enemy.y + enemy.speed }))
+    );
   };
 
   // Collision detection between arrows and enemies
@@ -73,7 +78,7 @@ const Game = () => {
   // Game over condition: enemy reaches bottom
   useEffect(() => {
     if (enemies.some((enemy) => enemy.y > window.innerHeight)) {
-      alert('Game Over! Your Score: ' + score);
+      alert("Game Over! Your Score: " + score);
       handleRestart(); // Call the restart function
     }
   }, [enemies]);
@@ -132,15 +137,21 @@ const Game = () => {
   };
 
   return (
-    <div onMouseMove={handleMouseMove} onContextMenu={handleRightClick}>
+    <div
+      onMouseMove={handleMouseMove}
+      onContextMenu={handleRightClick}
+      className="game-container"
+    >
       {/* Buttons for controlling the game */}
-      <div style={{ marginBottom: '20px' }}>
+      <div className="button-container">
         {!isGameRunning ? (
           <button onClick={handleStart}>Start</button>
         ) : (
           <button onClick={handlePause}>Pause</button>
         )}
-        {!isGameRunning && score > 0 && <button onClick={handleResume}>Resume</button>}
+        {!isGameRunning && score > 0 && (
+          <button onClick={handleResume}>Resume</button>
+        )}
         <button onClick={handleRestart}>Restart</button>
       </div>
 
