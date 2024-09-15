@@ -139,7 +139,7 @@ const Game = () => {
   return (
     <div
       onMouseMove={handleMouseMove}
-      onContextMenu={handleRightClick}
+      onClick={handleRightClick}
       className="game-container"
     >
       {/* Buttons for controlling the game */}
