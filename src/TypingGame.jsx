@@ -121,7 +121,7 @@ const TypingGame = () => {
                 color = char === userInput[index] ? "#02b050" : "red";
               }
               return (
-                <span key={index} style={{ color: color,fontWeight:"700" }}>
+                <span key={index} style={{ color: color,fontWeight:"500" }}>
                   {char}
                 </span>
               );

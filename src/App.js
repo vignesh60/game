@@ -5,6 +5,7 @@ import TypingGame from "./TypingGame";
 function App() {
   return (
     <>
+    {/* <Game /> */}
     <TypingGame />
     </>
   );
