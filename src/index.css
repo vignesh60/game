@@ -10,7 +10,7 @@
   font-family: "Roboto Slab", serif;
 }
 
-body{
+/* body{
   overflow: hidden;
   width: 100%;
 }
@@ -207,5 +207,124 @@ textarea {
   font-size: 16px;
   border: 2px solid #007bff;
   border-radius: 1rem;
+} */
+
+
+
+
+
+
+/* General styling for the game container */
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  gap: 2rem;
 }
+
+h2 {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+/* Enhanced input field styling */
+.input-field {
+  width: 100%;
+  max-width: 600px;
+  height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+}
+
+.card {
+  background: #fff !important;
+  position: relative;
+}
+
+/* Preview section */
+.preview-section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  background: #eeeeee75;
+}
+
+/* Hover container styling */
+.hover-container {
+  position: relative;
+}
+
+/* Class name styling */
+.class-name {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 3px 5px;
+  border-radius: 3px;
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  width: 5rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Target odd class names (1st, 3rd, 5th, etc.) and position them on the right */
+.hover-container:nth-child(odd) .class-name {
+  right: 0;
+}
+
+/* Target even class names (2nd, 4th, 6th, etc.) and position them on the left */
+.hover-container:nth-child(even) .class-name {
+  left: 0;
+}
+
+/* Show class name on hover */
+.hover-container:hover .class-name {
+  opacity: 1;
+}
+
+/* Elements inside the preview */
+img {
+  width: 20%;
+}
+
+.styled-container {
+  position: relative;
+}
+
+.button-section button{
+  background: #003775;
+  color: #fff;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
 
