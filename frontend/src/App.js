@@ -4,7 +4,10 @@ import ScoreDetails from "./ScoreDetails";
 import LeaderBoard from "./LeaderBoard";
 
 function App() {
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState(null); // Authenticated email
+  const [name, setName] = useState(""); // Authenticated name
+  const [loginEmail, setLoginEmail] = useState(""); // Email input for login form
+  const [loginName, setLoginName] = useState(""); // Name input for login form
   const [showScoreDetails, setShowScoreDetails] = useState(false); // State to toggle ScoreDetails
   const [showLeaderBoard, setShowLeaderBoard] = useState(false); // State to toggle LeaderBoard
 
@@ -12,8 +15,9 @@ function App() {
     // Retrieve and parse user data from localStorage
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      const user = JSON.parse(storedUser); // Parse the stringified object
-      setEmail(user.email); // Access the email property
+      const user = JSON.parse(storedUser);
+      setEmail(user.email);
+      setName(user.name);
     }
   }, []);
 
@@ -33,8 +37,47 @@ function App() {
     setShowLeaderBoard(false);
   };
 
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    if (loginName && loginEmail) {
+      const userData = { name: loginName, email: loginEmail };
+      localStorage.setItem("user", JSON.stringify(userData));
+      setEmail(loginEmail); // Set authenticated email
+      setName(loginName); // Set authenticated name
+    }
+  };
+
   if (!email) {
-    return <div>Please log in to see your score details and leaderboard.</div>;
+    return (
+      <div className="login-container">
+        <form onSubmit={handleLoginSubmit}>
+        <h2>Please log in</h2>
+          <div>
+            <label>
+              Name:
+              <input
+                type="text"
+                value={loginName}
+                onChange={(e) => setLoginName(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label>
+              Email:
+              <input
+                type="email"
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                required
+              />
+            </label>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    );
   }
 
   return (
