@@ -44,7 +44,6 @@ const StyleGame = () => {
           />
         </div>
 
-        {/* Color Palette */}
         <div className="color-picker">
           <label htmlFor="colorInput">Choose a Color:</label>
           <input

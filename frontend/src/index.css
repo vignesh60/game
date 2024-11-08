@@ -10,8 +10,8 @@
   font-family: "Roboto Slab", serif;
 }
 
-/* body{
-  overflow: hidden;
+body{
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -19,6 +19,7 @@
   position: relative;
   text-align: center;
   margin-top: 20px;
+  background-color: aliceblue;
 }
 
 .button-container {
@@ -74,6 +75,235 @@ button:active {
 
 
 
+.app-container {
+  position: relative;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.score-leader-container {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.close-btn {
+  margin-top: 10px;
+  padding: 5px 15px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+/* ScoreDetails.css */
+
+.score-details-container {
+  padding: 25px;
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.score-details-container h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score-details-container p {
+  font-size: 18px;
+  color: #0d0428;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.score-details-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.score-details-container li {
+  font-size: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #fff;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.score-details-container li:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+}
+
+.score-details-container .no-data {
+  text-align: center;
+  color: #f9f9f9;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.score-details-container .score {
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFD700; /* Gold color for score */
+}
+
+.score-field {
+  display: grid;
+  grid-template-columns: 1fr 50px 1fr;
+  text-align: start;
+}
+
+.score-field p {
+  color: #fff;
+}
+
+
+
+
+
+
+
+/* LeaderBoard.css */
+
+.leaderboard-container {
+  text-align: center;
+}
+
+.leaderboard-container h3 {
+  font-size: 32px;
+  font-family: 'Montserrat', sans-serif;
+  color: #2C3E50;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.leaderboard-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.leaderboard-container li {
+  background-color: #fff;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  border-radius: 10px;
+  margin-bottom: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.leaderboard-container li:hover {
+  transform: scale(1.02); /* Hover effect - lift effect */
+  background-color: #ecf0f1;
+}
+
+.leaderboard-container .no-data {
+  text-align: center;
+  color: #95a5a6;
+  font-size: 18px;
+  font-style: italic;
+}
+
+
+
+.modal {
+  height: 80vh;
+  overflow: scroll;
+  width: 600px !important;
+  position: relative;
+}
+
+
+
+
+/* .game-container {
+  position: relative;
+}
+
+.button-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+.leaderboard-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.leaderboard-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.leaderboard-container li {
+  font-size: 18px;
+  margin: 5px 0;
+}
+ */
 
 
 
@@ -84,14 +314,8 @@ button:active {
 
 
 
-
-
-
-
-
----------------typeinggame------------------------------
-
-.typing-game-container {
+ 
+/* .typing-game-container {
   width: 60%;
   margin: 20px auto;
   padding: 20px;
@@ -215,7 +439,7 @@ textarea {
 
 
 /* General styling for the game container */
-.game-container {
+/* .game-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
@@ -231,7 +455,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Enhanced input field styling */
+
 .input-field {
   width: 100%;
   max-width: 600px;
@@ -255,7 +479,7 @@ h2 {
   position: relative;
 }
 
-/* Preview section */
+
 .preview-section {
   border: 1px solid #ccc;
   padding: 20px;
@@ -265,12 +489,12 @@ h2 {
   background: #eeeeee75;
 }
 
-/* Hover container styling */
+
 .hover-container {
   position: relative;
 }
 
-/* Class name styling */
+
 .class-name {
   font-size: 12px;
   font-weight: bold;
@@ -285,22 +509,22 @@ h2 {
   transition: opacity 0.3s ease;
 }
 
-/* Target odd class names (1st, 3rd, 5th, etc.) and position them on the right */
+
 .hover-container:nth-child(odd) .class-name {
   right: 0;
 }
 
-/* Target even class names (2nd, 4th, 6th, etc.) and position them on the left */
+
 .hover-container:nth-child(even) .class-name {
   left: 0;
 }
 
-/* Show class name on hover */
+
 .hover-container:hover .class-name {
   opacity: 1;
 }
 
-/* Elements inside the preview */
+
 img {
   width: 20%;
 }
@@ -316,7 +540,7 @@ img {
   margin-bottom: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
-}
+} */
 
 
 
