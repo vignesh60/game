@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+🎯 Arrow Shooter Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Arrow Shooter is an interactive, browser-based game built with React, Konva, and Socket.io. In this action-packed game, players control a character who defends against a wave of descending enemies using arrows. The challenge intensifies as the game progresses, testing players’ reflexes and precision!
 
-## Available Scripts
+🎮 Gameplay
 
-In the project directory, you can run:
+    Objective: Aim and shoot arrows at enemies descending from the top of the screen. Each successful hit scores points, and the game becomes progressively harder as enemies spawn more frequently and move faster.
 
-### `npm start`
+    Controls:
+        Mouse Move: Position the character left or right at the bottom of the screen.
+        Right Click: Shoot an arrow upwards.
+        Buttons: Use the "Start," "Pause," "Resume," and "Restart" buttons to control the game’s flow.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    Game Flow:
+        As the game starts, enemies spawn and descend toward the player. For every successful hit, the player’s score increases. If an enemy reaches the bottom of the screen, the game ends, and the final score is displayed.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🚀 Features
 
-### `npm test`
+    Real-Time Interaction: The game updates dynamically, using Socket.io to enable real-time actions and responses.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    Scoring System: Every hit on an enemy increments the player's score, displayed in real-time.
 
-### `npm run build`
+    Difficulty Scaling: Enemy speed and spawn rate increase over time, making gameplay progressively challenging.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    User Persistence: The game stores the player’s name and email with localStorage for a personalized experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Game Controls: Players can start, pause, resume, and restart the game at any time.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🛠 Technology Stack
 
-### `npm run eject`
+    Frontend:
+        React for component-based UI
+        react-konva for canvas rendering
+        Socket.io-client for real-time communication
+    Backend:
+        Socket.io server for real-time event handling and score management
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+📜 How to Play
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Start the Game: Press the "Start" button to begin.
+    Move & Aim: Use your mouse to position the character left or right.
+    Shoot: Right-click to shoot arrows at enemies descending from above.
+    Avoid Losing: If an enemy reaches the bottom of the screen, the game will end, displaying your final score.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot (422)](https://github.com/user-attachments/assets/21c79250-cf92-427b-b476-32934956d046)
+![Screenshot (419)](https://github.com/user-attachments/assets/b4d59a45-768d-492f-80ef-a1a24512265c)
+![Screenshot (420)](https://github.com/user-attachments/assets/6059fbfd-ad0d-4901-8fd1-13ae23268d36)
+![Screenshot (421)](https://github.com/user-attachments/assets/08455944-463e-4929-a139-4177c9a4a261)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
