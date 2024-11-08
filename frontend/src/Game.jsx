@@ -22,12 +22,12 @@ const Game = () => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
-    } else {
+    } /* else {
       promptUserDetails();
-    }
+    } */
   }, []);
 
-  const promptUserDetails = () => {
+  /* const promptUserDetails = () => {
     const name = prompt("Enter your name:");
     const email = prompt("Enter your email:");
     if (name && email) {
@@ -35,7 +35,7 @@ const Game = () => {
       localStorage.setItem("user", JSON.stringify(userDetails));
       setUser(userDetails);
     }
-  };
+  }; */
 
   const handleMouseMove = (event) => {
     setMouseX(event.clientX);
