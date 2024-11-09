@@ -4,15 +4,14 @@ import ScoreDetails from "./ScoreDetails";
 import LeaderBoard from "./LeaderBoard";
 
 function App() {
-  const [email, setEmail] = useState(null); // Authenticated email
-  const [name, setName] = useState(""); // Authenticated name
-  const [loginEmail, setLoginEmail] = useState(""); // Email input for login form
-  const [loginName, setLoginName] = useState(""); // Name input for login form
-  const [showScoreDetails, setShowScoreDetails] = useState(false); // State to toggle ScoreDetails
-  const [showLeaderBoard, setShowLeaderBoard] = useState(false); // State to toggle LeaderBoard
+  const [email, setEmail] = useState(null);
+  const [name, setName] = useState(""); 
+  const [loginEmail, setLoginEmail] = useState(""); 
+  const [loginName, setLoginName] = useState("");
+  const [showScoreDetails, setShowScoreDetails] = useState(false);
+  const [showLeaderBoard, setShowLeaderBoard] = useState(false); 
 
   useEffect(() => {
-    // Retrieve and parse user data from localStorage
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const user = JSON.parse(storedUser);

@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000", // Replace with your frontend's URL
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -16,7 +16,7 @@ const io = socketIo(server, {
 app.use(cors());
 app.use(express.json());
 
-// MongoDB setup
+
 mongoose.connect("mongodb://localhost:27017/gameDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -30,41 +30,37 @@ const userSchema = new mongoose.Schema({
     {
       score: Number,
       date: { type: Date, default: Date.now },
-      gameDuration: Number, // For example, how long the game lasted
-      // Add any other relevant details here
+      gameDuration: Number,
     },
   ],
 });
 
 const User = mongoose.model("User", userSchema);
 
-// Socket.io communication
 io.on("connection", (socket) => {
   console.log("New client connected");
 
-  // Handle game over and update user's score with game results
   socket.on("game_over", async ({ name, email, score, gameDuration }) => {
     try {
       const user = await User.findOneAndUpdate(
         { email },
         {
           $set: { name },
-          $max: { score }, // Update if the new score is higher
+          $max: { score },
           $push: {
-            results: { score, gameDuration }, // Add game result to results array
+            results: { score, gameDuration },
           },
         },
         { upsert: true, new: true }
       );
 
-      // Broadcast the updated leaderboard
+
       updateLeaderboard();
     } catch (error) {
       console.error("Error updating score:", error);
     }
   });
 
-  // Emit leaderboard to all clients
   const updateLeaderboard = async () => {
     try {
       const leaderboard = await User.find()
@@ -84,9 +80,8 @@ io.on("connection", (socket) => {
 });
 
 // API endpoint to get user score by email
-// API endpoint to get user score by email
 app.get("/api/getUserScore/:email", async (req, res) => {
-  const email = req.params.email; // Correctly get email from the route params
+  const email = req.params.email; 
   try {
     const user = await User.findOne({ email });
     if (user) {

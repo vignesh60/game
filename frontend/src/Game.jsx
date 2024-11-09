@@ -15,9 +15,7 @@ const Game = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [user, setUser] = useState({ name: "", email: "" });
   
-  const enemyInterval = useRef(null); // Reference for enemy spawn interval
-
-  // Retrieve user data from localStorage
+  const enemyInterval = useRef(null); 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
